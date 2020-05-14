@@ -24,3 +24,26 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+*{
+    font-family: Lato;
+}
+
+
+
+.ripple-parent {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ion-color-ashesi {
+    --ion-color-base: var(--ion-color-ashesi);
+    --ion-color-base-rgb: var(--ion-color-ashesi-rgb);
+    --ion-color-contrast: var(--ion-color-ashesi-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-ashesi-contrast-rgb);
+    --ion-color-shade: var(--ion-color-ashesi-shade);
+    --ion-color-tint: var(--ion-color-ashesi-tint);
+  }
+  
+  
+  

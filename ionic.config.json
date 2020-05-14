@@ -1,5 +1,7 @@
 {
   "name": "Careers",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

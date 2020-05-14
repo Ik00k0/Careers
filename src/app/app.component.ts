@@ -4,16 +4,22 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import {Router} from '@angular/router/'
+// import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  private rootPage: any;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private router: Router,
+    // private screenOr: ScreenOrientation
   ) {
     this.initializeApp();
   }
@@ -22,6 +28,10 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      // this.screenOr.lock(this.screenOr.ORIENTATIONS.PORTRAIT)
+
+      //Add Possible Conditions Here in Future
+      this.router.navigateByUrl('info')
     });
   }
 }
