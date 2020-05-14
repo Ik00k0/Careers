@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'add-info',
     loadChildren: () => import('./add-info/add-info.module').then( m => m.AddInfoPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
 ];
 

@@ -1,0 +1,63 @@
+$ashesiColor: #be1e2d;
+
+.slideContainer {
+    height: 100vh;
+    object-fit: cover;
+}
+
+.swiper-slide img {
+    height: 50vh;
+    object-fit: cover;
+}
+
+.lineHeightCust {
+    line-height: 1.2em;
+}
+
+.visibleHeader {
+    font-weight: 700;
+}
+
+.bodyText {
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 0px;
+}
+
+.slide {
+    height: 100vh;
+}
+
+.swiper-pagination {
+    top: 2px !important;
+}
+
+.custom-bullets .swiper-pagination-bullets {
+    bottom: 50px;
+}
+
+.slides-md {
+    --bullet-background-active: #BE1E2D !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #BE1E2D !important;
+}
+
+.moreButton {
+    --border-radius: 10px;
+    z-index: 3;
+}
+
+.positionLeft {
+    object-fit: cover !important;
+    object-position: left;
+}
+
+.innerh1{
+    display: inline;
+}
+
+p.small{
+    color:  var(--ion-color-ashesi, #be1e2d);
+}

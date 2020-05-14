@@ -1,9 +1,134 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>addInfo</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+
+  <div class="slideContainer">
+
+
+    <ion-slides #slides pager="true" [options]="slideOpts" class="custom-bullets">
+
+      <ion-slide>
+
+        <div class="slide">
+          <img src="../../assets//img/ashesiAdv.png" alt="" class="mb-1">
+          <h1 class="text-capitalize lineHeightCust ">
+            <span>Discover The</span>
+            <ion-text class="d-block font-weight-bold" color="ashesi">
+              Ashesi Advantage
+            </ion-text>
+          </h1>
+          <ion-row class="mt-2">
+            <ion-col class="mx-auto" size="10">
+              <p class="bodyText mt-1">
+                View the possible career paths
+                that can be achieved through a
+                combination of our courses.
+              </p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="8" class="mx-auto">
+
+              <ion-button class="moreButton" (click)="swipeNext()" expand="block" fill="solid" color="ashesi">
+                <span class="text-white">Next</span>
+              </ion-button>
+
+              <p class="font-weight-light mt-3 mb-2 small" color="ashesi" (click)=routeAway()>Skip</p>
+            </ion-col>
+          </ion-row>
+
+
+        </div>
+
+      </ion-slide>
+
+      <ion-slide>
+        <!-- Slide 2 -->
+        <div class="slide">
+          <img src="../../assets//img/coursesMadeFor.png" alt="" class="mb-1 positionLeft">
+          <h1 class="text-capitalize  lineHeightCust">
+            <span>Find</span>
+            <ion-text class="font-weight-bold" color="ashesi">
+              Courses
+            </ion-text>
+            <span class="d-block">Made For You</span>
+
+          </h1>
+          <ion-row class="mt-2">
+            <ion-col class="mx-auto" size="10">
+              <p class="bodyText mt-1">
+                Choose from local to international courses & opportunities to prepare you for your future.
+              </p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="8" class="mx-auto">
+
+              <ion-button class="moreButton" (click)="swipeNext()" expand="block" fill="solid" color="ashesi">
+                <span class="text-white">Next</span>
+              </ion-button>
+
+              <p class="font-weight-light mt-3 mb-2 small" color="ashesi" (click)=routeAway()>Skip</p>
+            </ion-col>
+          </ion-row>
+
+
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+
+        <!-- 3rd Slide -->
+        <div class="slide">
+          <img src="../../assets//img/supportExp.png" alt="" class="mb-1 positionLeft">
+          <h1 class="text-capitalize  lineHeightCust">
+            <span>Get Access to</span>
+            <ion-text class="font-weight-bold d-block" color="ashesi">
+              Support & Experience
+            </ion-text>
+          </h1>
+          <ion-row class="mt-2">
+            <ion-col class="mx-auto" size="10">
+              <p class="bodyText mt-1">
+                Develop the skills that will
+                help you achieve your career
+                goals, regardless of what you
+                study at Ashesi.
+              </p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="8" class="mx-auto">
+
+              <ion-button class="moreButton" (click)="routeAway()" expand="block" fill="solid" color="ashesi">
+                <span class="text-white">Get Started</span>
+              </ion-button>
+
+              
+            </ion-col>
+          </ion-row>
+
+
+        </div>
+      </ion-slide>
+
+    </ion-slides>
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
 
 </ion-content>
