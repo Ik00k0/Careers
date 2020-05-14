@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -25,25 +25,27 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-*{
-    font-family: Lato;
+* {
+  font-family: Lato;
 }
 
-
-
 .ripple-parent {
-    position: relative;
-    overflow: hidden;
-  }
+  position: relative;
+  overflow: hidden;
+}
 
-  .ion-color-ashesi {
-    --ion-color-base: var(--ion-color-ashesi);
-    --ion-color-base-rgb: var(--ion-color-ashesi-rgb);
-    --ion-color-contrast: var(--ion-color-ashesi-contrast);
-    --ion-color-contrast-rgb: var(--ion-color-ashesi-contrast-rgb);
-    --ion-color-shade: var(--ion-color-ashesi-shade);
-    --ion-color-tint: var(--ion-color-ashesi-tint);
-  }
-  
-  
-  
+.ion-color-ashesi {
+  --ion-color-base: var(--ion-color-ashesi);
+  --ion-color-base-rgb: var(--ion-color-ashesi-rgb);
+  --ion-color-contrast: var(--ion-color-ashesi-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-ashesi-contrast-rgb);
+  --ion-color-shade: var(--ion-color-ashesi-shade);
+  --ion-color-tint: var(--ion-color-ashesi-tint);
+}
+.input-clear-icon.sc-ion-input-md,
+.input-clear-icon.sc-ion-input-ios  {
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><polygon fill='white' points='405,136.798 375.202,107 256,226.202 136.798,107 107,136.798 226.202,256 107,375.202 136.798,405 256,285.798 375.202,405 405,375.202 285.798,256'/></svg>") !important;
+  width: 30px;
+  height: 30px;
+  background-size: 22px;
+}

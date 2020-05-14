@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
+  private disabled: Boolean = true;
   constructor() { }
 
   ngOnInit() {
