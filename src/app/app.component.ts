@@ -31,7 +31,7 @@ export class AppComponent {
       // this.screenOr.lock(this.screenOr.ORIENTATIONS.PORTRAIT)
 
       //Add Possible Conditions Here in Future
-      this.router.navigateByUrl('register')
+      this.router.navigateByUrl('login/register')
     });
   }
 }

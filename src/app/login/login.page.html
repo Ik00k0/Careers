@@ -35,7 +35,7 @@
           <div class="">
             <ion-item>
               <ion-label id="custLabel" color="white" position="floating">Email</ion-label>
-              <ion-input  clearInput="true" inputmode="email" color="white"></ion-input>
+              <ion-input clearInput="true" inputmode="email" color="white"></ion-input>
             </ion-item>
           </div>
 
@@ -49,7 +49,7 @@
           <div class="">
             <ion-item>
               <ion-label id="custLabel" color="white" position="floating">Password</ion-label>
-              <ion-input  clearInput="true" type="password" color="white"></ion-input>
+              <ion-input clearInput="true" type="password" color="white"></ion-input>
             </ion-item>
           </div>
 
@@ -59,7 +59,8 @@
 
       <ion-row class="mt-5">
         <ion-col size="8" class="mx-auto text-center">
-          <ion-button class="moreButton" [disabled]=disabled (click)="onClick()" expand="block" fill="solid" color="light">
+          <ion-button class="moreButton" [disabled]=disabled (click)="onClick()" expand="block" fill="solid"
+            color="light">
             <span color="ashesi">Login</span>
           </ion-button>
         </ion-col>
@@ -74,14 +75,15 @@
     </ion-grid>
 
 
-    <div class="createActBtn mx-auto">
+    <div class="createActBtn mx-auto" (click)="register()">
       <ion-col class="mx-auto text-center" size="12">
-        <p class=" text-white text-underline account"> <span style="font-weight: 300"> Don't Have an Account?</span>  <span class="font-weight-bold pl-2"> Sign Up</span></p>    
+        <p class=" text-white text-underline account"> <span style="font-weight: 300"> Don't Have an Account?</span>
+          <span class="font-weight-bold pl-2"> Sign Up</span></p>
       </ion-col>
-      
-  </div>
+
+    </div>
   </div>
 
-  
+
 
 </ion-content>

@@ -1,32 +1,109 @@
-<ion-content>
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
 
-  <div class="slideContainer">
+<ion-content no-scroll>
+  <div class="area1">
+    <img id='img' src="../../../assets/img/librarySignIn.png" alt="">
+  </div>
+
+
+  <div class="area2">
+
+
     <ion-grid fixed>
       <ion-row>
+        <ion-col class="cardStyle" size="12">
+          <ion-card class="shadow text-center">
+            <ion-card-content>
+              <h1>Sign Up For Careers</h1>
 
-        <ion-col class="mx-auto" size="10">
+              <ion-item>
+                <ion-label position="floating">
+                  <p>First Name</p>
+                </ion-label>
+                <ion-input clearInput="true" inputmode="email" color="dark"></ion-input>
+              </ion-item>
 
-          <div class="d-flex flex-row justify-content-center">
+              <ion-item>
+                <ion-label position="floating">
+                  <p>Last Name</p>
+                </ion-label>
+                <ion-input clearInput="true" inputmode="email" color="dark"></ion-input>
+              </ion-item>
 
-            <div class="my-auto">
-              <img class="" src="../../../assets/img/ashesiLogoWhite.png" alt="">
-            </div>
+              <ion-list color="dark">
+                <ion-list-header>
+                  <ion-label>
+                    Single Selection
+                  </ion-label>
+                </ion-list-header>
 
-            <div class="my-auto pl-4">
-              <h1 class="text-white d-inline font-weight-bold">
-                <span>STUDENT</span><br>
-                <span>CAREERS</span>
-              </h1>
-            </div>
+                <ion-item>
+                  <ion-label>Gender</ion-label>
+                  <ion-select placeholder="Select One">
+                    <ion-select-option value="f">Female</ion-select-option>
+                    <ion-select-option value="m">Male</ion-select-option>
+                  </ion-select>
+                </ion-item>
 
-          </div>
+                <ion-item>
+                  <ion-label>Hair Color</ion-label>
+                  <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+                    <ion-select-option value="brown">Brown</ion-select-option>
+                    <ion-select-option value="blonde">Blonde</ion-select-option>
+                    <ion-select-option value="black">Black</ion-select-option>
+                    <ion-select-option value="red">Red</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
 
-        </ion-col>
-        <ion-col size="5">
 
 
+            </ion-card-content>
+
+            <ion-button [disabled]=disabled (click)="next()" expand="block" fill="solid" color="light">
+              <span color="ashesi">
+                Continue
+              </span>
+            </ion-button>
+          </ion-card>
         </ion-col>
       </ion-row>
     </ion-grid>
+    <div class=" text-center">
+
+
+
+      <!-- <div class="d-flex">
+
+
+        <div class="flex-fill text-center active">
+          <ion-icon name="person"></ion-icon>
+          <hr class="my-0 mx-auto p-0 w-50">
+          <span class="small m-0 p-0"> User Info</span>
+        </div>
+
+        <div class="flex-fill border-bottom border-white m-2 inactive">
+          <ion-icon name="key-outline"></ion-icon>
+        </div>
+
+        <div class="flex-fill border-bottom border-white m-2 inactive">
+          <ion-icon name="key-outline"></ion-icon>
+        </div>
+
+
+      </div> -->
+
+    </div>
   </div>
+
+
+
+
+
 </ion-content>

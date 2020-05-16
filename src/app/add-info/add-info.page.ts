@@ -23,6 +23,7 @@ export class AddInfoPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    
   }
 
   sliderConfig = {
@@ -32,6 +33,7 @@ export class AddInfoPage implements OnInit {
     pager: true,
   };
 
+ 
 
   swipeNext(){
     this.slides.slideNext();

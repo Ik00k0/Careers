@@ -1,1 +1,33 @@
-@import '../login.page.scss'
+@import "../login.page.scss";
+
+//Set Label Font-Weights
+[id^="ion-input-"] {
+    font-weight: 300;
+    font-family: lato;
+}
+
+.inactive {
+    opacity: 0.2;
+}
+
+.active {
+    opacity: 1;
+}
+
+#img {
+    height: 35vh;
+    object-fit: cover;
+    object-position: -10em;
+    width: 100%;
+}
+
+.area1,
+.area2 {
+    position: relative;
+}
+
+.cardStyle {
+    position: absolute;
+    top: -7em;
+    left: 0px;
+}

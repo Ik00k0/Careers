@@ -70,7 +70,9 @@ hr {
     background-size: 22px;
 }
 
-#ion-input-0-lbl, #ion-input-1-lbl {
-    font-weight: 400;
+
+//Set Label Font-Weights
+[id^="ion-input-"] {
+    font-weight: 300;
     font-family: lato;
 }

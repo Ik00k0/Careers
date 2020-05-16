@@ -26,6 +26,7 @@
     "@ionic/angular": "^5.0.0",
     "bootstrap": "^4.5.0",
     "cordova-android": "8.1.0",
+    "cordova-plugin-ionic": "^5.4.7",
     "cordova-plugin-screen-orientation": "^3.0.2",
     "es6-promise-plugin": "^4.2.2",
     "jquery": "^3.5.1",
@@ -73,7 +74,15 @@
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-screen-orientation": {}
+      "cordova-plugin-screen-orientation": {},
+      "cordova-plugin-ionic": {
+        "APP_ID": "a7fa86c7",
+        "CHANNEL_NAME": "Production",
+        "UPDATE_METHOD": "background",
+        "MAX_STORE": "2",
+        "MIN_BACKGROUND_DURATION": "30",
+        "UPDATE_API": "https://api.ionicjs.com"
+      }
     },
     "platforms": [
       "android"
