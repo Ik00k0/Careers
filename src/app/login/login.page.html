@@ -28,43 +28,46 @@
         </ion-col>
       </ion-row>
 
+      <form [formGroup]="loginForm" >
+        <ion-row class="mt-3">
+          <ion-col class="mx-auto" size="10">
 
-      <ion-row class="mt-3">
-        <ion-col class="mx-auto" size="10">
+            <div class="">
+              <ion-item>
+                <ion-label id="custLabel" color="white" position="floating">Email</ion-label>
+                <ion-input formControlName="uemail"  clearInput="true" inputmode="email" color="white"></ion-input>
+              </ion-item>
 
-          <div class="">
-            <ion-item>
-              <ion-label id="custLabel" color="white" position="floating">Email</ion-label>
-              <ion-input clearInput="true" inputmode="email" color="white"></ion-input>
-            </ion-item>
-          </div>
-
-
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col class="mx-auto mt-2" size="10">
-
-          <div class="">
-            <ion-item>
-              <ion-label id="custLabel" color="white" position="floating">Password</ion-label>
-              <ion-input clearInput="true" type="password" color="white"></ion-input>
-            </ion-item>
-          </div>
+              <span @fade class="patternError text-light small"  style="position: absolute;" *ngIf="loginForm.controls.uemail.hasError('pattern')" >Please only enter your Ashesi email</span>
+            </div>
 
 
-        </ion-col>
-      </ion-row>
+          </ion-col>
+        </ion-row>
 
-      <ion-row class="mt-5">
-        <ion-col size="8" class="mx-auto text-center">
-          <ion-button class="moreButton" [disabled]=disabled (click)="onClick()" expand="block" fill="solid"
-            color="light">
-            <span color="ashesi">Login</span>
-          </ion-button>
-        </ion-col>
-      </ion-row>
+        <ion-row>
+          <ion-col class="mx-auto mt-2" size="10">
+
+            <div class="">
+              <ion-item>
+                <ion-label id="custLabel" color="white" position="floating">Password</ion-label>
+                <ion-input formControlName="upassword" clearInput="true" type="password" color="white"></ion-input>
+              </ion-item>
+            </div>
+
+
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="mt-5">
+          <ion-col size="8" class="mx-auto text-center">
+            <ion-button disabled='loginForm.invalid' class="moreButton shadow-sm" color='light' [disabled]=disabled expand="block" fill="solid">
+              <span color="ashesi">Login</span>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+      </form>
 
       <ion-row class="mt-4">
         <ion-col class="mx-auto text-center" size="8">
@@ -77,7 +80,7 @@
 
     <div class="createActBtn mx-auto" (click)="register()">
       <ion-col class="mx-auto text-center" size="12">
-        <p class=" text-white text-underline account"> <span style="font-weight: 300"> Don't Have an Account?</span>
+        <p class=" text-white text-underline account infinite"> <span style="font-weight: 300"> Don't Have an Account?</span>
           <span class="font-weight-bold pl-2"> Sign Up</span></p>
       </ion-col>
 

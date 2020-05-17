@@ -4,7 +4,8 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import {Router} from '@angular/router/'
+import { Router } from '@angular/router/';
+import { Storage } from '@ionic/storage';
 // import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
@@ -19,7 +20,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private router: Router,
-    // private screenOr: ScreenOrientation
+    private storage: Storage
   ) {
     this.initializeApp();
   }
@@ -31,7 +32,17 @@ export class AppComponent {
       // this.screenOr.lock(this.screenOr.ORIENTATIONS.PORTRAIT)
 
       //Add Possible Conditions Here in Future
-      this.router.navigateByUrl('info')
+      this.storage.get('infoSeen').then(
+        (data) => {
+          if (data == true) {
+            this.router.navigateByUrl('login')
+          } else {
+            this.router.navigateByUrl('info')
+          }
+        }
+      )
+
+
     });
   }
 }

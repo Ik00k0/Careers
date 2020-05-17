@@ -9,7 +9,6 @@ import { AddInfoPageRoutingModule } from './add-info-routing.module';
 import { AddInfoPage } from './add-info.page';
 
 
-
 @NgModule({
   imports: [
     CommonModule,

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
 import { IonSlides } from '@ionic/angular';
 import { ViewChild } from '@angular/core';
 import {Router} from '@angular/router'
 
 // import * as $ from 'jquery';
+import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: 'app-add-info',
@@ -19,7 +20,8 @@ export class AddInfoPage implements OnInit {
   @ViewChild('slides') slides: IonSlides;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private storage: Storage
   ) { }
 
   ngOnInit() {
@@ -40,6 +42,7 @@ export class AddInfoPage implements OnInit {
   }
 
   routeAway(){
+    this.storage.set('infoSeen',true);
     this.router.navigateByUrl('login')
   }
 
