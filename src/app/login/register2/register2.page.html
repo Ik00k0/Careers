@@ -1,0 +1,75 @@
+<ion-content>
+
+
+  <ion-grid fixed>
+
+    <ion-buttons slot="start">
+      <ion-back-button color="dark"> Back </ion-back-button>
+    </ion-buttons>
+
+    <div class="centerGrid">
+      <ion-row class="text-left">
+        <ion-col size="10" class="ml-4">
+          <div class="d-inline-flex flex-row ml-auto">
+            <div id="circle">
+              <span class="circleText">2</span>
+            </div>
+            <span color="dark" class="lead pl-2 align-middle"> <strong>Your Account Details</strong> </span>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="text-left">
+        <ion-col size="10" class=" ml-4 mt-1">
+          <p> A confirmation mail will be sent to your mail inbox shortly to verify your details.</p>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row class="text-center">
+        <ion-col size="10" class="mx-auto mt-3">
+          <ion-item class="ion-no-padding">
+            <ion-label position="floating">
+              <p class='ion-label'>Your Ashesi student email</p>
+            </ion-label>
+            <ion-input clearInput="true" inputmode="email" color="dark"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="10" class="mx-auto mt-3">
+          <ion-item class="ion-no-padding">
+            <ion-label position="floating">
+              <p class='ion-label'>Your Password</p>
+            </ion-label>
+            <ion-input clearInput="true" type="password" color="dark"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="10" class="mx-auto mt-3">
+          <ion-item class="ion-no-padding">
+            <ion-label position="floating">
+              <p class='ion-label'>Confirm Your Password</p>
+            </ion-label>
+            <ion-input clearInput="true" type="password" color="dark"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col size="10" class="mx-auto mt-5">
+          <ion-button (click)="presentAlert()" expand="block" color="ashesi" fill="solid" class="shadow-sm">
+            Continue 
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+
+    </div>
+
+  </ion-grid>
+</ion-content>

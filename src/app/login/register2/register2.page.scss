@@ -1,0 +1,13 @@
+@import '../register/register.page.scss';
+
+.centerGrid{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    right: 0px;
+    transform: translateY(-50%);
+}
+
+img{
+    max-width: 10%;
+}

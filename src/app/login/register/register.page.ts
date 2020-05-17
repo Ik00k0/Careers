@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {IonSlides} from '@ionic/angular'
+import {Router} from '@angular/router'
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -10,10 +11,10 @@ import {IonSlides} from '@ionic/angular'
 export class RegisterPage implements OnInit {
 
   private disabled: Boolean=true;
-  @ViewChild('slides') slides: IonSlides;
+  
 
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -32,6 +33,6 @@ export class RegisterPage implements OnInit {
   // }
 
   next(){
-    this.slides.slideNext();
+    this.router.navigateByUrl('login/register2')
   }
 }
