@@ -28,18 +28,19 @@
         </ion-col>
       </ion-row>
 
-      <form [formGroup]="loginForm" >
+      <form [formGroup]="loginForm">
         <ion-row class="mt-3">
           <ion-col class="mx-auto" size="10">
 
             <div class="">
               <ion-item>
                 <ion-label id="custLabel" color="white" position="floating">Email</ion-label>
-                <ion-input formControlName="uemail"  clearInput="true" inputmode="email" color="white"></ion-input>
-                
+                <ion-input formControlName="uemail" clearInput="true" inputmode="email" color="white"></ion-input>
+
               </ion-item>
-              <span @fade class="patternError text-light small"  style="position: absolute;" *ngIf="loginForm.controls.uemail.hasError('pattern')" >Please enter a valid Ashesi Student email</span>
-              
+              <span @fade class="patternError text-light small" style="position: absolute;"
+                *ngIf="loginForm.controls.uemail.hasError('pattern')">Please enter a valid Ashesi Student email</span>
+
             </div>
 
 
@@ -56,19 +57,35 @@
               </ion-item>
             </div>
 
-
           </ion-col>
         </ion-row>
+
+        <ion-row class="mt-4">
+          <ion-col size="10" class="mx-auto text-center">
+            <div class="form-check">
+              <input (click)="check(loginForm.controls.urem.value)" formControlName="urem" type="checkbox" class="form-check-input"
+                id="exampleCheck1">
+              <label (click)="check(loginForm.controls.urem.value)" class="form-check-label text-light font-weight-light" for="exampleCheck1">Remember Me?</label>
+            </div>
+          </ion-col>
+        </ion-row>
+
+
+
 
         <ion-row class="mt-5">
           <ion-col size="8" class="mx-auto text-center">
-            <ion-button [disabled]=loginForm.invalid class="moreButton shadow-sm" color='light' (click)="submitLoginDetails(loginForm.controls.uemail.value, loginForm.controls.upassword.value)" expand="block" fill="solid">
+            <ion-button [disabled]=loginForm.invalid class="moreButton shadow-sm" color='light'
+              (click)="submitLoginDetails(loginForm.controls.uemail.value, loginForm.controls.upassword.value)"
+              expand="block" fill="solid">
               <span *ngIf="noLogin" color="ashesi">Login</span>
               <ion-spinner *ngIf="!noLogin && !loadingDone" color="ashesi" name="crescent"></ion-spinner>
-              <ion-icon *ngIf="!noLogin && loadingDone"   color="ashesi" name="checkmark-circle"></ion-icon>
+              <ion-icon *ngIf="!noLogin && loadingDone" color="ashesi" name="checkmark-circle"></ion-icon>
             </ion-button>
           </ion-col>
         </ion-row>
+
+
 
       </form>
 
@@ -83,7 +100,8 @@
 
     <div class="createActBtn mx-auto" (click)="register()">
       <ion-col class="mx-auto text-center" size="12">
-        <p class=" text-white text-underline account infinite"> <span style="font-weight: 300"> Don't Have an Account?</span>
+        <p class=" text-white text-underline account infinite"> <span style="font-weight: 300"> Don't Have an
+            Account?</span>
           <span class="font-weight-bold pl-2"> Sign Up</span></p>
       </ion-col>
 

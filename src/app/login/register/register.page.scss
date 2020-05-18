@@ -125,9 +125,9 @@ ion-col{
     color: white;
   };
 
-//   .buttonBottom{
-//     bottom: 10%;
-//     position: absolute;
-//     left: 0%;
-//     right: 0;
-//   }
+
+  ion-select{
+    --placeholder-color: #000;
+    --color: #000;
+  }
+  

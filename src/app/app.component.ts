@@ -35,7 +35,7 @@ export class AppComponent {
       this.storage.get('infoSeen').then(
         (data) => {
           if (data == true) {
-            this.router.navigateByUrl('login')
+            this.router.navigateByUrl('login/register')
           } else {
             this.router.navigateByUrl('info')
           }

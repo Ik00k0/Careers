@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HTTP } from '@ionic-native/http/ngx';
 import { loginModel } from './loginModel';
 import { ToastController } from '@ionic/angular';
@@ -35,24 +35,26 @@ export class LoginPage implements OnInit {
 
   private disabled: Boolean = true;
   private noLogin: Boolean = true;
-  private loginForm = {};
+  
   private emailRegex = '[a-zA-Z]{1,20}[\.\-\_]{0,1}[a-zA-Z]{0,20}[\.\-\_]{0,1}[a-zA-Z]{0,20}@ashesi.edu.gh';
   private loginUrl = 'http://157.245.117.18/career/login/loginproc.php';
   private loginFrame: loginModel;
   private loadingDone: boolean = false;
-
+  private loginForm: FormGroup;
 
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
     private httpClient: HTTP,
-    private toaster: ToastController
+    private toaster: ToastController,
+    
   ) {
 
 
     this.loginForm = this.formBuilder.group({
       'uemail': ['', [Validators.required, Validators.pattern(this.emailRegex)]],
-      'upassword': ['', Validators.required]
+      'upassword': ['', Validators.required],
+      'urem': ['']
     });
 
 
@@ -67,13 +69,25 @@ export class LoginPage implements OnInit {
   }
 
 
+  
+
   submitLoginDetails(uEmail: string, uPassword: string) {
     // console.log(uemail + ' ' + upassword )
     this.noLogin = false;
+    let uRemState = this.loginForm.get('urem').value;
+    console.log("Urem is " + uRemState);
+    let uRem ='';
+
+    if(uRemState ==  false){
+      uRem = 'forget'
+    }else{
+      uRem = 'checked'
+    }
+
     let body = {
       umail: uEmail,
       upass: uPassword,
-      urem: 'true'
+      urem: uRem
     }
 
     console.log(body)
@@ -85,12 +99,12 @@ export class LoginPage implements OnInit {
           this.loggedIn();
         } else if ((data.data == "failed") || (data.data == "inactive")) {
 
-          if(data.data == "inactive"){
+          if (data.data == "inactive") {
             this.inactive();
-          }else{
+          } else {
             this.failedToLogin();
           }
-          
+
           this.noLogin = true;
         }
 
@@ -142,6 +156,10 @@ export class LoginPage implements OnInit {
       cssClass: 'text-center'
     });
     toast.present();
+  }
+
+  check(i:string) {
+    console.log(i);
   }
 
 

@@ -80,3 +80,16 @@ hr {
 .patternError{
    left: 5%;
 }
+
+.radio-icon {
+    width: 1em !important;
+    height: 1em !important;
+}
+
+ion-radio{
+    border-color: #fff;
+}
+
+ion-item{
+    --highlight-color-focused: black !important;
+}

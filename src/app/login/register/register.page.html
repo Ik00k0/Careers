@@ -27,75 +27,79 @@
   <div class="area2">
 
     <ion-card class="text-center m-0">
+      <form [formGroup]="regForm">
+        <ion-grid fixed>
+          <ion-card-content>
 
-      <ion-grid fixed>
-        <ion-card-content>
+            <ion-list>
 
-          <ion-list>
-
-            <ion-row class="text-center">
-              <ion-col size="12">
-                <div class="d-inline-flex flex-row">
-                  <div id="circle">
-                    <span class="circleText">1</span>
+              <ion-row class="text-center mt-1">
+                <ion-col size="12">
+                  <div class="d-inline-flex flex-row">
+                    <div id="circle">
+                      <span class="circleText">1</span>
+                    </div>
+                    <span color="dark" class="lead pl-2 align-middle"> <strong>Your Personal Information</strong>
+                    </span>
                   </div>
-                  <span color="dark" class="lead pl-2 align-middle"> <strong>Your Personal Information</strong> </span>
-                </div>
 
 
-              </ion-col>
-            </ion-row>
+                </ion-col>
+              </ion-row>
 
-            <ion-row class="text-center">
-              <ion-col size="10" class="mx-auto mt-3">
-                <ion-item class="ion-no-padding">
-                  <ion-label position="floating">
-                    <p class='ion-label'>First Name</p>
-                  </ion-label>
-                  <ion-input clearInput="true" inputmode="email" color="dark"></ion-input>
-                </ion-item>
-              </ion-col>
+              <ion-row class="text-center">
+                <ion-col size="10" class="mx-auto mt-3">
+                  <ion-item class="ion-no-padding">
+                    <ion-label position="floating">
+                      <p class='ion-label'>First Name</p>
+                    </ion-label>
+                    <ion-input formControlName="firstname" clearInput="true" inputmode="email" color="dark"></ion-input>
+                  </ion-item>
+                </ion-col>
 
-              <ion-col size="10" class="mx-auto mt-3">
-                <ion-item class="ion-no-padding">
-                  <ion-label position="floating">
-                    <p class='ion-label'>Last Name</p>
-                  </ion-label>
-                  <ion-input clearInput="true" inputmode="email" color="dark"></ion-input>
-                </ion-item>
-              </ion-col>
+                <ion-col size="10" class="mx-auto mt-3">
+                  <ion-item class="ion-no-padding">
+                    <ion-label position="floating">
+                      <p class='ion-label'>Last Name</p>
+                    </ion-label>
+                    <ion-input formControlName="lastname" clearInput="true" inputmode="email" color="dark"></ion-input>
+                  </ion-item>
+                </ion-col>
 
+                <ion-col size="10" class="mx-auto mt-4">
+                  <ion-list>
+                    <ion-item class="ion-no-padding">
+                      <ion-label position='floating' color="dark">Gender</ion-label>
+                      <ion-select style="color: black;" (ionChange)='reset()' cancel-text="Done" value="male" class="select" color="dark" placeholder="Select One" interface="action-sheet" formControlName="gender" >
+                        <ion-select-option style="color: black;" *ngFor="let item of possibleGenders" class="text-capitalize text-dark"  color="dark" [value]="item.gender" checked="true">{{item.name}}</ion-select-option>
+                       
+                      </ion-select>
+                    </ion-item>
+                  </ion-list>
+
+                </ion-col>
+
+
+
+              </ion-row>
+            </ion-list>
+
+
+            <ion-row class="buttonBottom">
               <ion-col size="10" class="mx-auto mt-4">
-                <ion-item class="ion-no-padding">
-                  <ion-label color="dark">Gender</ion-label>
-                  <ion-select class="select" color="dark" placeholder="Select One">
-                    <ion-select-option color="dark" value="f">Female</ion-select-option>
-                    <ion-select-option color="dark" value="m">Male</ion-select-option>
-                  </ion-select>
-                </ion-item>
+                <ion-button [disabled]='regForm.invalid' (click)="next()" expand="block" fill="solid" color="ashesi">
+                  <span color="light">
+                    Continue
+                  </span>
+                </ion-button>
               </ion-col>
-
-
-
             </ion-row>
-          </ion-list>
+
+          </ion-card-content>
 
 
-          <ion-row class="buttonBottom">
-            <ion-col size="10" class="mx-auto mt-4">
-              <ion-button [disabled]=false (click)="next()" expand="block" fill="solid" color="light">
-                <span color="ashesi">
-                  Continue
-                </span>
-              </ion-button>
-            </ion-col>
-          </ion-row>
-
-        </ion-card-content>
-
-
-      </ion-grid>
-
+        </ion-grid>
+      </form>
     </ion-card>
 
   </div>
