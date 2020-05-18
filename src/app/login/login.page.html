@@ -36,9 +36,10 @@
               <ion-item>
                 <ion-label id="custLabel" color="white" position="floating">Email</ion-label>
                 <ion-input formControlName="uemail"  clearInput="true" inputmode="email" color="white"></ion-input>
+                
               </ion-item>
-
-              <span @fade class="patternError text-light small"  style="position: absolute;" *ngIf="loginForm.controls.uemail.hasError('pattern')" >Please only enter your Ashesi email</span>
+              <span @fade class="patternError text-light small"  style="position: absolute;" *ngIf="loginForm.controls.uemail.hasError('pattern')" >Please enter a valid Ashesi Student email</span>
+              
             </div>
 
 
@@ -61,8 +62,10 @@
 
         <ion-row class="mt-5">
           <ion-col size="8" class="mx-auto text-center">
-            <ion-button disabled='loginForm.invalid' class="moreButton shadow-sm" color='light' [disabled]=disabled expand="block" fill="solid">
-              <span color="ashesi">Login</span>
+            <ion-button [disabled]=loginForm.invalid class="moreButton shadow-sm" color='light' (click)="submitLoginDetails(loginForm.controls.uemail.value, loginForm.controls.upassword.value)" expand="block" fill="solid">
+              <span *ngIf="noLogin" color="ashesi">Login</span>
+              <ion-spinner *ngIf="!noLogin && !loadingDone" color="ashesi" name="crescent"></ion-spinner>
+              <ion-icon *ngIf="!noLogin && loadingDone"   color="ashesi" name="checkmark-circle"></ion-icon>
             </ion-button>
           </ion-col>
         </ion-row>
