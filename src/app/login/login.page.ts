@@ -20,11 +20,11 @@ import {
     trigger(
       'fade', [
       transition(':enter', [
-        style({ opacity: 0, color: 'red', position: 'absolute' }),
-        animate('500ms', style({ transform: 'translateX(0)', opacity: 1 }))
+        style({ opacity: 0, color: 'red' }),
+        animate('500ms', style({ opacity: 1, color:'white'}))
       ]),
       transition(':leave', [
-        style({ opacity: 1, color: 'red', position: 'absolute' }),
+        style({ opacity: 1}),
         animate('500ms', style({ opacity: 0 }))
       ])
     ])
@@ -142,7 +142,7 @@ export class LoginPage implements OnInit {
     const toast = await this.toaster.create({
       message: 'You have attempted to login too many times and your account has been deactivated. Please contact the Admin.',
       color: 'danger',
-      duration: 10000,
+      duration: 50000,
       cssClass: 'text-center'
     });
     toast.present();

@@ -32,7 +32,7 @@ on success inform user to check their email for activation link and then redirec
 request type: post
 page: 157.245.117.18/career/login/forgotpassproc.php
 request data (variables): umail
-response data (string): failed, (email not registered) and success
+response data (string): failed,  (email not registered) inactive, and success
 
 on success inform user to check their email for password reset link link and then redirect to login: 157.245.117.18/career/login/login.php
 
