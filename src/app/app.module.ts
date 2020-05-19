@@ -11,7 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RegisterService} from '../app/login/register.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
   providers: [
     StatusBar,
     SplashScreen,
+    RegisterService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

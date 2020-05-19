@@ -1,0 +1,104 @@
+//Make the login page the landing page
+//hanlde front end validations
+//only ashesi email is valid. below is the regular expression for that
+//ashesi email regex: /[a-zA-Z]{1,20}[\.\-\_]{0,1}[a-zA-Z]{0,20}[\.\-\_]{0,1}[a-zA-Z]{0,20}@ashesi.edu.gh/gm;
+
+
+//login ajax call
+====================
+
+request type: post
+page: 157.245.117.18/career/login/loginproc.php
+request data (variables): umail, upass and urem
+response data (string): inactive, failed and success
+
+on success, redirect to dashboard: 157.245.117.18/career/view/dashboard.php
+
+
+//registration ajax call
+==========================
+
+request type: post
+page: 157.245.117.18/career/login/regproc.php
+request data (variables): ufname, ulname, ugender, uemail and upass
+response data (string): exist, failed, emailfailed(already registered) and success
+
+on success inform user to check their email for activation link and then redirect to login: 157.245.117.18/career/login/login.php
+
+
+//Forgotten password ajax call
+==========================
+
+request type: post
+page: 157.245.117.18/career/login/forgotpassproc.php
+request data (variables): umail
+response data (string): failed, (email not registered) and success
+
+on success inform user to check their email for password reset link link and then redirect to login: 157.245.117.18/career/login/login.php
+
+//Get all Industry ajax call
+==========================
+
+request type: get
+page: 157.245.117.18/career/mobile/get_all_industry.php
+response data: json encoded list of industries
+
+count number of records in json for total industries
+find a way to set selected industry as active
+
+
+//Get all careers for selected industry ajax call
+==========================
+
+request type: post
+page: 157.245.117.18/career/mobile/get_careers_on_ind.php
+request data (variables): view
+response data: json encoded list of careers or (string:'nocareer')
+
+count number of records in json for total careers
+find a way to set selected career as active
+if json is empty, no career found
+
+//Get all courses for selected career ajax call
+==========================
+
+request type: post
+page: 157.245.117.18/career/mobile/get_courses_for_career.php
+request data (variables): oneCar
+response data: json encoded list of courses or (string:'nocourse')
+
+count number of records in json for total courses
+if json is empty, no course found
+
+//Get all Department ajax call
+==========================
+
+request type: get
+page: 157.245.117.18/career/mobile/get_all_departments.php
+response data: json encoded list of departments
+
+count number of records in json for total departments
+find a way to set selected department as active
+
+//Get all courses for department ajax call
+==========================
+
+request type: get
+page: 157.245.117.18/career/mobile/get_courses_for_department.php
+response data: json encoded list of courses
+
+count number of records in json for total courses
+find a way to set selected courses as active
+if json is empty, no course found
+
+//Generate careers for courses ajax call
+==========================
+
+request type: post
+page: 157.245.117.18/career/mobile/generate_careers.php
+request data (array of course IDs): scourse
+response data: json encoded list of careers, (string:'nocareers') and (string:'nocourse')
+
+count number of records in json for total careers
+sort the data/array and list by highest count
+if json data is empty, no career found
