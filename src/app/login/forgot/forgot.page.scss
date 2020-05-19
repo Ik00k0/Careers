@@ -1,0 +1,30 @@
+@import '../login.page.scss';
+
+ion-content{
+    --background: #923d41;
+}
+
+
+.centerGrid{
+        position: absolute;
+        width: 100%;
+        top: 40%;
+        left: 0px;
+        right: 0px;
+        transform: translateY(-40%);
+}
+
+.ashesi{
+    color: var(--ion-color-ashesi);
+}
+
+
+ion-item{
+    --highlight-height: 1px;
+    --highlight-color-focused: black !important;
+    --highlight-color: black !important;
+}
+
+div.item-native{
+    padding: 0px !important;
+}

@@ -163,6 +163,8 @@ export class LoginPage implements OnInit {
   }
 
 
-
+  forgot(){
+    this.router.navigateByUrl('login/forgot')
+  }
 
 }
