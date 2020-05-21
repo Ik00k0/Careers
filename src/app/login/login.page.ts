@@ -11,6 +11,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -36,7 +37,7 @@ export class LoginPage implements OnInit {
   private disabled: Boolean = true;
   private noLogin: Boolean = true;
   
-  private emailRegex = '[a-zA-Z]{1,20}[\.\-\_]{0,1}[a-zA-Z]{0,20}[\.\-\_]{0,1}[a-zA-Z]{0,20}@ashesi.edu.gh';
+  private emailRegex = environment.emailRegex;
   private loginUrl = 'http://157.245.117.18/career/login/loginproc.php';
   private loginFrame: loginModel;
   private loadingDone: boolean = false;

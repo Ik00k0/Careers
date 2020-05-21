@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  emailRegex: '[a-zA-Z]{1,20}[\.\-\_]{0,1}[a-zA-Z]{0,20}[\.\-\_]{0,1}[a-zA-Z]{0,20}@ashesi.edu.gh',
+  forgotPassURL: 'http://157.245.117.18/career/login/forgotpassproc.php',
+  jsonHeader:  { 'Content-Type': 'application/json' }
 };
 
 /*
