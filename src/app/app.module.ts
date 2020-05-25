@@ -13,6 +13,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RegisterService} from '../app/login/register.service';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import {RegisterService} from '../app/login/register.service';
     StatusBar,
     SplashScreen,
     RegisterService,
+    AuthGuard,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

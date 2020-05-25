@@ -43,6 +43,7 @@ export class AddInfoPage implements OnInit {
 
   routeAway(){
     this.storage.set('infoSeen',true);
+    console.log("Set Status");
     this.router.navigateByUrl('login')
   }
 

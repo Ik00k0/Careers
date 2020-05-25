@@ -32,16 +32,7 @@ export class AppComponent {
       // this.screenOr.lock(this.screenOr.ORIENTATIONS.PORTRAIT)
 
       //Add Possible Conditions Here in Future
-      this.storage.get('infoSeen').then(
-        (data) => {
-          if (data == true) {
-            this.router.navigateByUrl('login/forgot')
-          } else {
-            this.router.navigateByUrl('info')
-            
-          }
-        }
-      )
+      this.router.navigateByUrl('home')
 
 
     });

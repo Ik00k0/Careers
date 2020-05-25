@@ -4,6 +4,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HTTP } from '@ionic-native/http/ngx';
 import { loginModel } from './loginModel';
 import { ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 import {
   trigger,
   state,
@@ -48,6 +49,7 @@ export class LoginPage implements OnInit {
     private formBuilder: FormBuilder,
     private httpClient: HTTP,
     private toaster: ToastController,
+    private storage: Storage
     
   ) {
 
@@ -97,6 +99,8 @@ export class LoginPage implements OnInit {
 
         if (data.data == "success") {
           this.loadingDone = true
+          this.storage.set("loggedIn", true);
+          this.router.navigateByUrl("home/active");
           this.loggedIn();
         } else if ((data.data == "failed") || (data.data == "inactive")) {
 
