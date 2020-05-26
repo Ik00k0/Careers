@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
 
-  constructor(
-    private storage: Storage
-  ) { }
-
+  constructor() { }
 
   ngOnInit() {
-    // this.storage.clear()
   }
+
 }

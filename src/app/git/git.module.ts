@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { GitPageRoutingModule } from './git-routing.module';
 
-import { HomePage } from './home.page';
+import { GitPage } from './git.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    GitPageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [GitPage]
 })
-export class HomePageModule {}
+export class GitPageModule {}
