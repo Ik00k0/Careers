@@ -34,10 +34,6 @@ const routes: Routes = [
   {
     path: 'courses',
     loadChildren: () => import('./courses/courses.module').then( m => m.CoursesPageModule)
-  },
-  {
-    path: 'git',
-    loadChildren: () => import('./git/git.module').then( m => m.GitPageModule)
   }
 ];
 

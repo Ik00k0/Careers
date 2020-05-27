@@ -1,0 +1,99 @@
+ion-icon {
+    --ionicon-stroke-width: 18px;
+  }
+
+ion-content, ion-header, ion-toolbar{
+  --background: #fefefe !important;
+}
+
+ion-toolbar{
+  --padding-bottom : 0px;
+  --padding-top: 0px;
+  --padding-start: 0px;
+  --padding-end: 0px;
+}
+.header-ios ion-toolbar:last-of-type {
+  --border-width: 0px;
+
+}
+
+.header-md::after {
+  display: none;
+}
+
+#burger{
+  position: absolute;
+  left: 2.5%;
+}
+
+#burgerEnd{
+  position: absolute;
+  right: 2.5%;
+}
+
+#ashesiLogo{
+  width: 30px;
+}
+
+.cardCol{
+  background: url('../../assets/img/cardBg.png');
+  height: 150px;
+  background-size: 500px;
+  clip-path: circle(40% at 93% 50%);
+}
+
+.ashesi{
+  color: var(--ion-color-ashesi);
+  font-size: 2rem
+}
+
+.minHeight{
+  height: 150px;
+}
+
+
+.overlayBg{
+  background: var(--ion-color-ashesi-shade);
+}
+
+.clipText{
+  color: black;
+  
+
+  span{
+    position: absolute;
+    top: 50%;
+    width: 150px;
+    height: 100px;
+    left: 1.5em;
+    font-size: 1.1rem;
+    transform: translateY(-50%);
+  }
+
+  ion-button{
+    --color: var(--ion-color-ashesi-shade) !important;
+    text-transform: capitalize;
+    --background: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: normal;
+  }
+
+  .titles{
+    color: #393939;
+  }
+}
+
+
+ion-slide { 
+  width: unset !important;
+  }
+
+.fSlide{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.squeeze{
+  letter-spacing: normal;
+}

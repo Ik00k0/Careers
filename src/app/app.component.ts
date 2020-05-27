@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewChecked } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { Router, RouterEvent, NavigationStart, NavigationEnd } from '@angular/router/';
 import { Storage } from '@ionic/storage';
-import {MenuController} from '@ionic/angular'
+import { MenuController, AlertController } from '@ionic/angular'
 // import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
@@ -18,7 +18,8 @@ import {MenuController} from '@ionic/angular'
 
 export class AppComponent {
   private rootPage: any;
-
+  private urls = ["/careers", '/home', '/courses'];
+  private urlMatch = false;
 
 
   constructor(
@@ -27,23 +28,38 @@ export class AppComponent {
     private statusBar: StatusBar,
     private router: Router,
     private storage: Storage,
-    private menu: MenuController
+    private menu: MenuController,
+    private alert: AlertController
   ) {
+
+
+    //Check for current Page to display menu
+    this.router.events.forEach(
+      (event)=>{
+        if(event instanceof NavigationEnd) {
+          let currentUrl = this.router.url;
+          this.urls.forEach(
+            (element)=>{
+              if(element == currentUrl){
+                this.urlMatch = true;
+              }
+            }
+          )
+        }
+      }
+    )
+
+
     this.initializeApp();
   }
-
-
-  ionViewWillEnter() {
-    console.log("Entered");
-    this.closeMenu();
-  }
-
 
 
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+
       // this.screenOr.lock(this.screenOr.ORIENTATIONS.PORTRAIT)
 
       //Add Possible Conditions Here in Future
@@ -57,9 +73,9 @@ export class AppComponent {
       //   }
       // )
 
+      // this.checkURL();
     });
   }
-
 
 
 
@@ -84,4 +100,29 @@ export class AppComponent {
   async  closeMenu() {
     await this.menu.close();
   }
+
+
+  async comingSoon() {
+
+
+    const alert = await this.alert.create({
+      // cssClass: 'my-custom-class',
+      header: 'Coming Soon',
+      // subHeader: 'Subtitle',
+      message: 'This aspect of the app will be coming soon.',
+      buttons: ['Ok, I\'ll be waiting']
+    });
+
+    await alert.present();
+  }
+
+  // checkURL() {
+  //   setTimeout(function () {
+  //     //do something once
+  //     console.log("hey")
+  //   }, 2500);
+  // }
+
+
+
 }
