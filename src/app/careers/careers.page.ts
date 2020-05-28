@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController, AlertController, IonSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-careers',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CareersPage implements OnInit {
 
-  constructor() { }
+  private alphabet: string[] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];;
+  constructor(
+    private menu: MenuController,
+  ) { }
 
   ngOnInit() {
   }
 
+  openMenu() {
+    this.menu.open();
+  }
 }
