@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {MenuController, AlertController, IonSlides} from '@ionic/angular';
 import { Router } from '@angular/router';
 
+import {Storage} from '@ionic/storage'
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -12,17 +13,21 @@ export class HomePage implements OnInit {
   @ViewChild('slides') slides: IonSlides;
   
 
-  private username: String = "Username";
+  private username: String = "";
 
 
   
   constructor(
     private menu: MenuController,
     private alert: AlertController,
-    private router: Router
+    private router: Router,
+    private storage: Storage
   ) { }
 
   ngOnInit() {
+    this.storage.get('username').then(
+      (user)=>{this.username = user.split('@')[0]}
+    )
   }
 
 

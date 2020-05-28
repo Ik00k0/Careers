@@ -59,10 +59,10 @@ export class Register2Page implements OnInit {
 
     this.digitalForm = this.fb.group({
 
-      email: ['oluwa.oyelohunnu@ashesi.edu.gh', [Validators.required, Validators.pattern(this.emailRegex)]],
+      email: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
 
-      password: ['tobi4life', [Validators.required,]],
-      confirmPass: ['tobi4life', [Validators.required,]],
+      password: ['', [Validators.required,]],
+      confirmPass: ['', [Validators.required,]],
 
     },
       { validator: this.passwordMatch }

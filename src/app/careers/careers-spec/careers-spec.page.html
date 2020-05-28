@@ -1,0 +1,70 @@
+<ion-content>
+
+  <div class="area1 text-center">
+
+    <div class="overlayRed">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="careers" class="text-capitalize mt-3" text="Back To Careers"></ion-back-button>
+      </ion-buttons>
+
+      <div class="vAlignHeader">
+
+        <span class="h4 text-white">{{this.name}}</span>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <div class="area2">
+    <div class="mx-auto">
+
+    </div>
+    <ion-card class="text-center m-0">
+
+      <ion-grid>
+        <ion-row *ngIf="!this.stringy">
+
+
+          <ion-col size="12" class="mx-auto text-left">
+            <p class="h4 mt-4 ml-3 text-dark"> Available Careers ({{this.length}})</p>
+          </ion-col>
+
+          <ion-col size="12" class="mx-auto text-left">
+            <p class="mt-2 ml-3 text-dark lead"> Here are some of the career paths that
+              you can follow in the <span style="color:'var(--ion-color-ashesi)'; font-weight: 500;">{{this.name}}
+              </span>
+              .</p>
+          </ion-col>
+
+
+          <ion-col size="12">
+            <ion-list class="text-left">
+              <div *ngFor="let career of arrayData; let i=index;" class="">
+
+                <ion-list class="text-left">
+  
+                  <ion-item (click)="getCourses(career.careerid, career.careername)">
+                    <ion-label >{{career.careername}}</ion-label>
+                    <ion-icon position="end" color="ashesi" name="arrow-forward-circle"></ion-icon>
+                  </ion-item>
+                </ion-list>
+
+              </div>
+              
+            </ion-list>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+
+    </ion-card>
+
+  </div>
+
+
+
+
+
+</ion-content>

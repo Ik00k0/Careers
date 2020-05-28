@@ -14,6 +14,7 @@ import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RegisterService} from '../app/login/register.service';
 import { AuthGuard } from './auth.guard';
+import { HTTP } from '@ionic-native/http/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { AuthGuard } from './auth.guard';
   imports: [BrowserModule, BrowserAnimationsModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule, IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
+    HTTP,
     SplashScreen,
     RegisterService,
     AuthGuard,

@@ -54,7 +54,7 @@ export class ForgotPage implements OnInit {
 
   ngOnInit() {
     this.forgotForm = this.fb.group({
-      email: ["oluwa.oyelohunnu@ashesi.edu.gh", [Validators.required, Validators.pattern(environment.emailRegex)]]
+      email: ["", [Validators.required, Validators.pattern(environment.emailRegex)]]
     })
   }
 

@@ -100,6 +100,7 @@ export class LoginPage implements OnInit {
         if (data.data == "success") {
           this.loadingDone = true
           this.storage.set("loggedIn", true);
+          this.storage.set("username", this.loginForm.get('uemail').value);
           this.router.navigateByUrl("home");
           this.loggedIn();
         } else if ((data.data == "failed") || (data.data == "inactive")) {

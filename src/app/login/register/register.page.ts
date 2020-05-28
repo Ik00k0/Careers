@@ -30,9 +30,9 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {
     this.regForm = this.fb.group({
-      firstname: ['Peyi', [Validators.required]],
-      lastname: ['Oyelo', [Validators.required]],
-      gender: ['male', [Validators.required]]
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
+      gender: ['', [Validators.required]]
 
     })
   }

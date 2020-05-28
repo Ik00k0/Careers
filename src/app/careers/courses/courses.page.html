@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" defaultHref="careers/careers-spec" class="text-capitalize mt-3"
+        text="Back To Career Path"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="centerGrid">
+
+    <ion-row>
+      <ion-col size="10" class="mx-auto">
+        <p class="lead">Relevant Courses for a
+        </p>
+        <p class="h3 mt-0" style="color:var(--ion-color-ashesi)">
+          {{courseName}}
+        </p>
+      </ion-col>
+
+      <ion-col class="mx-auto" size="12">
+        <ion-item class="item-text-wrap" *ngFor="let item of courseData; let i =index">
+          <span>{{i+1}}</span>
+          <ion-label class="text-dark ml-4">
+            <span class="lead" style="color: black;">{{item.dept_code}}-{{item.ccode}}</span><br>
+            <span class="lead mt-0" style="color: black;">{{item.cname}} </span>
+          </ion-label>
+         
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
