@@ -3,7 +3,7 @@
   </div>
 
   <div class="parentDiv my-auto">
-    <ion-grid class="center" fixed>
+    <ion-grid fixed class="center">
       <ion-row>
         <ion-col class="text-center mx-auto" size="10">
           <img src="../../assets/img/ashesiLogo.png" alt="" srcset="">
@@ -13,45 +13,25 @@
 
       <ion-row class="text-center">
         <ion-col class="mx-auto" size="10">
-          <p class="text-white bodyText">See how your future can be enabled by an Ashesi Education</p>
+          <p class="text-white bodyText">Imagine your future with an <br>Ashesi Education</p>
         </ion-col>
       </ion-row>
 
-      <ion-row class="centeredButton">
-        <ion-col size="2">
-          <ion-button (click)="addInfoNavig()" size='large' color="ashesi" expand="block" fill="solid"
-            class="ion-activatable ripple-parent moreButton w-80 mx-auto">
+      <ion-row>
+        <ion-col size="8" class="mx-auto mt-2">
+            <ion-button [routerLink]="['/add-info']"  size='large' color="ashesi" expand="block" fill="solid"
+              class="ion-activatable ripple-parent moreButton">
 
-            <span class="buttonText initial">Tell Me More</span>
-            <ion-ripple-effect type="bounded"></ion-ripple-effect>
+              <span class="buttonText initial">Tell Me More</span>
+              <ion-ripple-effect type="bounded"></ion-ripple-effect>
 
-          </ion-button>
+            </ion-button>
         </ion-col>
       </ion-row>
+
+
     </ion-grid>
   </div>
 
 
-
-
 </ion-content>
-
-<ion-fab class="customFabPosition bottomButton" vertical="bottom" horizontal="center" slot="fixed">
-  <ion-button (click)="addInfoNavig()" size='large' color="ashesi" expand="block" fill="solid" class="ion-activatable ripple-parent moreButton">
-
-    <span class="buttonText initial">Tell Me More</span>
-    <ion-ripple-effect type="bounded"></ion-ripple-effect>
-
-  </ion-button>
-</ion-fab>
-
-<!-- <ion-footer text-center no-border transparent>
-  <ion-toolbar transparent>
-    
-  </ion-toolbar>
-</ion-footer> -->
-<!-- <ion-footer no-border style="z-index: 1;">
-  <ion-toolbar class="clearToolbar">
-   
-  </ion-toolbar>
-</ion-footer> -->

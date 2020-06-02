@@ -20,7 +20,7 @@ import { environment } from 'src/environments/environment';
 
 export class AppComponent {
   private rootPage: any;
-  private urls = ["/careers","/careers/courses/", '/home', '/home/active','/courses'];
+  private urls = ["/careers", "/careers/courses/", '/home', '/home/active', '/courses'];
   private urlMatch = false;
   industries: any = null;
   private username;
@@ -51,8 +51,14 @@ export class AppComponent {
 
               if (this.industries == null) {
                 this.platform.ready().then(
+
                   (ready) => {
-                    this.getIndustries();
+
+                    if (this.platform.is("cordova")) {
+                      console.log("got in!")
+                      this.getIndustries();
+                    }
+
 
                   }
                 )
@@ -69,32 +75,14 @@ export class AppComponent {
 
 
   initializeApp() {
+
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      this.storage.get('username').then((user)=>{ this.username= user.split('@')[0] })
-
-
-
-
-
-
-
-      // this.screenOr.lock(this.screenOr.ORIENTATIONS.PORTRAIT)
-
-      //Add Possible Conditions Here in Future
-      // this.router.navigateByUrl('home')
-
-      // this.router.events.subscribe(
-      //   async (event: NavigationEnd) => {
-      //     console.log(event.url);
-      //     let url = await event.url;
-      //     console.log(url);
-      //   }
-      // )
-
-      // this.checkURL();
+      if (this.platform.is("cordova")) {
+        this.storage.get('username').then((user) => { this.username = user.split('@')[0] })
+      }
     });
   }
 
@@ -160,7 +148,7 @@ export class AppComponent {
 
   }
 
-  logout(){
+  logout() {
     this.storage.set('loggedIn', false);
     this.menu.close();
     this.router.navigateByUrl('login');
