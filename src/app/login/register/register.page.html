@@ -6,103 +6,121 @@
   </ion-toolbar>
 </ion-header> -->
 
-<ion-content no-scroll>
-  <div class="area1 text-center">
-    <div class="overlay">
-      <ion-buttons class="ml-4" color="dark" slot="start">
-        <ion-back-button text="" style="--icon-font-size: '1.2rem'; padding-top: '1.5em'" icon="caret-back-outline" color="light" defaultHref="login"></ion-back-button>
-      </ion-buttons>
-      <div class="vAlignHeader">
-        <span class="h3">Sign Up For Careers</span>
-
-        <span class="d-block lead px-4 mt-3">Discover the skills and knowledge you will need to become your
-          future.</span>
 
 
+
+<ion-content>
+
+  <ion-grid fixed class="p-0 vw100">
+
+    <ion-row class="area1 p-0 m-0">
+      <div class="overlay">
+        <ion-col class="p-0 m-0" size="12">
+
+          <ion-toolbar class="pt-3 text-center ion-transparent">
+            <ion-buttons slot="start">
+              <ion-back-button class="back-button" text="" style="--icon-font-size: '1.2rem'" icon="caret-back-outline"
+                color="light" defaultHref="login"></ion-back-button>
+            </ion-buttons>
+            <ion-title color="light" class="p-0">Sign Up For Careers</ion-title>
+          </ion-toolbar>
+
+          <ion-text class="d-block px-4 mt-3 text-center">
+            <p class="tagline">Discover the skills and knowledge you will need to become your
+              future.</p>
+          </ion-text>
+
+        </ion-col>
       </div>
-    </div>
-  </div>
+    </ion-row>
 
+      <ion-card class="text-center">
+        <form [formGroup]="regForm">
+          <ion-grid fixed>
+            <ion-card-content>
 
-  <div class="area2">
+              <ion-list class="mt-2">
 
-    <ion-card class="text-center m-0">
-      <form [formGroup]="regForm">
-        <ion-grid fixed>
-          <ion-card-content>
-
-            <ion-list>
-
-              <ion-row class="text-center mt-1">
-                <ion-col size="12">
-                  <div class="d-inline-flex flex-row">
-                    <div id="circle">
-                      <span class="circleText">1</span>
+                <ion-row class="text-center mt-1">
+                  <ion-col class="p-0 m-0"  size="12">
+                    <div class="d-inline-flex flex-row">
+                      <div id="circle">
+                        <span class="circleText">1</span>
+                      </div>
+                      <span color="dark" class="personalInfo pl-2 align-middle"> Your Personal Information
+                      </span>
                     </div>
-                    <span color="dark" class="lead pl-2 align-middle"> <strong>Your Personal Information</strong>
-                    </span>
-                  </div>
 
 
-                </ion-col>
-              </ion-row>
+                  </ion-col>
+                </ion-row>
 
-              <ion-row class="text-center">
-                <ion-col size="10" class="mx-auto mt-3">
-                  <ion-item class="ion-no-padding">
-                    <ion-label position="floating">
-                      <p class='ion-label'>First Name</p>
-                    </ion-label>
-                    <ion-input formControlName="firstname" clearInput="true" inputmode="email" color="dark"></ion-input>
-                  </ion-item>
-                </ion-col>
-
-                <ion-col size="10" class="mx-auto mt-3">
-                  <ion-item class="ion-no-padding">
-                    <ion-label position="floating">
-                      <p class='ion-label'>Last Name</p>
-                    </ion-label>
-                    <ion-input formControlName="lastname" clearInput="true" inputmode="email" color="dark"></ion-input>
-                  </ion-item>
-                </ion-col>
-
-                <ion-col size="10" class="mx-auto mt-4">
-                  <ion-list>
+                <ion-row class="text-center">
+                  <ion-col class="p-0 m-0"  size="10" class="mx-auto mt-3">
                     <ion-item class="ion-no-padding">
-                      <ion-label position='floating' color="dark">Gender</ion-label>
-                      <ion-select style="color: black;" (ionChange)='reset()' cancel-text="Done" value="male" class="select" color="dark" placeholder="Select One" interface="action-sheet" formControlName="gender" >
-                        <ion-select-option style="color: black;" *ngFor="let item of possibleGenders" class="text-capitalize text-dark"  color="dark" [value]="item.gender" checked="true">{{item.name}}</ion-select-option>
-                       
-                      </ion-select>
+                      <ion-label position="floating">
+                        <p class='ion-label'>First Name</p>
+                      </ion-label>
+                      <ion-input formControlName="firstname" clearInput="true" inputmode="email" color="dark">
+                      </ion-input>
                     </ion-item>
-                  </ion-list>
+                  </ion-col>
 
+                  <ion-col class="p-0 m-0"  size="10" class="mx-auto mt-3">
+                    <ion-item class="ion-no-padding">
+                      <ion-label position="floating">
+                        <p class='ion-label'>Last Name</p>
+                      </ion-label>
+                      <ion-input formControlName="lastname" clearInput="true" inputmode="email" color="dark">
+                      </ion-input>
+                    </ion-item>
+                  </ion-col>
+
+                  <ion-col class="p-0 m-0"  size="10" class="mx-auto mt-4">
+                    <ion-list>
+                      <ion-item class="ion-no-padding">
+                        <ion-label position='floating' color="dark">Gender</ion-label>
+                        <ion-select style="color: black;" (ionChange)='reset()' cancel-text="Done" value="male"
+                          class="select" color="dark" placeholder="Select One" interface="action-sheet"
+                          formControlName="gender">
+                          <ion-select-option style="color: black;" *ngFor="let item of possibleGenders"
+                            class="text-capitalize text-dark" color="dark" [value]="item.gender" checked="true">
+                            {{item.name}}</ion-select-option>
+
+                        </ion-select>
+                      </ion-item>
+                    </ion-list>
+
+                  </ion-col>
+
+
+
+                </ion-row>
+              </ion-list>
+
+
+              <ion-row class="buttonBottom">
+                <ion-col class="p-0 m-0"  size="10" class="mx-auto mt-4">
+                  <ion-button [disabled]='regForm.invalid' (click)="next()" expand="block" fill="solid" color="ashesi">
+                    <span color="light">
+                      Continue
+                    </span>
+                  </ion-button>
                 </ion-col>
-
-
-
               </ion-row>
-            </ion-list>
+
+            </ion-card-content>
 
 
-            <ion-row class="buttonBottom">
-              <ion-col size="10" class="mx-auto mt-4">
-                <ion-button [disabled]='regForm.invalid' (click)="next()" expand="block" fill="solid" color="ashesi">
-                  <span color="light">
-                    Continue
-                  </span>
-                </ion-button>
-              </ion-col>
-            </ion-row>
+          </ion-grid>
+        </form>
+      </ion-card>
 
-          </ion-card-content>
+  </ion-grid>
 
 
-        </ion-grid>
-      </form>
-    </ion-card>
 
-  </div>
+
 
 
 

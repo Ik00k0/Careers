@@ -14,6 +14,15 @@ ion-content {
     opacity: 0.2;
 }
 
+.ion-transparent {
+    --background: transparent;
+}
+
+.back-button {
+    position: absolute;
+    left: 1.5em;
+}
+
 .area1 {
     background-image: url("../../../assets/img/librarySignIn.png");
     background-size: cover;
@@ -24,10 +33,10 @@ ion-content {
     color: white;
 }
 
-.area2 {
-    z-index: 3;
-    height: 60vh;
-}
+// .area2 {
+//     z-index: 3;
+//     height: 60vh;
+// }
 
 .area1[_ngcontent-pwy-c135],
 .area2[_ngcontent-pwy-c135] .active {
@@ -66,21 +75,20 @@ ion-label,
 .overlay {
     width: 100%;
     height: 100%;
-    // background: rgba(0,0,0,0.7);
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
     z-index: 2;
     top: 0;
     left: 0;
 }
 
-.vAlignHeader {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transition: translate;
-    transform: translateY(-50%);
-}
+// .vAlignHeader {
+//     position: absolute;
+//     top: 50%;
+//     left: 0;
+//     right: 0;
+//     transition: translate;
+//     transform: translateY(-50%);
+// }
 
 span.h3 {
     font-weight: 600;
@@ -91,29 +99,46 @@ span.lead {
 }
 
 ion-card {
-    height: 100%;
-    border-radius: 20px 20px 0px 0px;
+    margin: -12vh 0 0 0;
+    z-index: 4;
+    border-radius: 1.5em;
+    box-shadow: none;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    position: absolute;
-    width: 100%;
-    bottom: 10%;
 }
 
-ion-col{
-    padding: 0px !important;
+.tagline{
+    margin-top: 0;
+    margin-bottom: 0em;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding-top: 1em;
 }
 
+@media (orientation: landscape){
+    ion-card{
+        margin: -5vh 0 0 0;
+    }
+
+    .tagline{
+        padding-top: 0em;
+    }
+}
+
+ion-title{
+    font-size: 1.3rem;
+    font-weight: 900;
+}
 
 #circle {
-    background: #BE1E2D;
+    background: #be1e2d;
     width: 2em;
     height: 2em;
     border-radius: 50%;
     position: relative;
 }
 
-.circleText{
+.circleText {
     position: absolute;
     top: 10%;
     left: 50%;
@@ -123,11 +148,15 @@ ion-col{
     margin-right: auto !important;
     font-size: 16px !important;
     color: white;
-  };
+    font-weight: 900;
+}
 
+.personalInfo{
+    font-size: 1.25rem;
+    font-weight: 500;
+}
 
-  ion-select{
+ion-select {
     --placeholder-color: #000;
     --color: #000;
-  }
-  
+}
