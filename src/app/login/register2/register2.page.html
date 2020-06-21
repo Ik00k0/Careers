@@ -1,101 +1,106 @@
 <ion-content>
+  <ion-header  class="ion-no-border">
+    <ion-buttons slot="start">
+
+    </ion-buttons>
+
+
+    <ion-toolbar class="pt-3 text-center ion-transparent">
 
 
 
-  <ion-grid fixed>
+      <ion-title color="ashesi" class="p-0">
+
+        <ion-back-button class="back-button" text="" style="--icon-font-size: '1.2rem'" icon="caret-back-outline"
+          color="ashesi" defaultHref="login/register"></ion-back-button>
+
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 
-    <div class="my-auto">
-      <ion-buttons class="ml-3 mt-3" color="dark" slot="start">
-        <ion-back-button text="" style="--icon-font-size: '1.2rem'" icon="caret-back-outline" color="dark" defaultHref="login/register"></ion-back-button>
-      </ion-buttons>
-      <div class="centerGrid">
+  <ion-grid fixed class="mt-5">
 
-
-
-
-        <ion-row class="text-center">
-          <ion-col size="10" class="ml-4">
-            <div class="d-inline-flex flex-row ml-auto">
-              <div id="circle">
-                <span class="circleText">2</span>
-              </div>
-              <span color="dark" class="lead pl-2 align-middle"> <strong>Your Account Details</strong> </span>
+      <ion-row class="text-center">
+        <ion-col size="10" class="mx-auto">
+          <div class="d-inline-flex flex-row ml-auto">
+            <div id="circle">
+              <span class="circleText">2</span>
             </div>
-          </ion-col>
-        </ion-row>
+            <span color="dark" class="lead pl-2 align-middle"> <strong>Your Account Details</strong> </span>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="text-center">
+        <ion-col size="10" class="mx-auto mt-2">
+          <p> A confirmation mail will be sent to your mail inbox shortly to verify your details.</p>
+        </ion-col>
+      </ion-row>
+
+      <form [formGroup]="digitalForm" action="">
 
         <ion-row class="text-center">
-          <ion-col size="10" class=" ml-4 mt-1">
-            <p> A confirmation mail will be sent to your mail inbox shortly to verify your details.</p>
-          </ion-col>
-        </ion-row>
+          <ion-col size="10" class="mx-auto pt-2">
+            <ion-item class="ion-no-padding">
+              <ion-label position="floating">
+                <p class='ion-label'>Your Ashesi student email</p>
+              </ion-label>
+              <ion-input formControlName="email" clearInput="true" inputmode="email" color="dark"></ion-input>
+            </ion-item>
 
-        <form [formGroup]="digitalForm" action="">
-
-          <ion-row class="text-center">
-            <ion-col size="10" class="mx-auto mt-3">
-              <ion-item class="ion-no-padding">
-                <ion-label position="floating">
-                  <p class='ion-label'>Your Ashesi student email</p>
-                </ion-label>
-                <ion-input formControlName="email" clearInput="true" inputmode="email" color="dark"></ion-input>
-              </ion-item>
-
-              <span style="position: 'absolute'; width: 100%;
+            <span style="position: 'absolute'; width: 100%;
               left: 0;
               text-align: left;" class="small" @passMatch
-                *ngIf="digitalForm.get('email').hasError('pattern') && digitalForm.get('email').dirty">Please make use
-                of
-                your Ashesi Email</span>
+              *ngIf="digitalForm.get('email').hasError('pattern') && digitalForm.get('email').dirty">Please make use
+              of
+              your Ashesi Email</span>
 
-            </ion-col>
-          </ion-row>
+          </ion-col>
+        </ion-row>
 
-          <div class="">
-            <ion-row>
-              <ion-col size="10" class="mx-auto mt-3">
-                <ion-item class="ion-no-padding">
-                  <ion-label position="floating">
-                    <p class='ion-label'>Your Password</p>
-                  </ion-label>
-                  <ion-input formControlName="password" clearInput="true" type="password" color="dark"></ion-input>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-
-            <ion-row class="mt-1">
-              <ion-col size="10" class="mx-auto mt-3">
-                <ion-item class="ion-no-padding">
-                  <ion-label position="floating">
-                    <p class='ion-label'>Confirm Your Password</p>
-                  </ion-label>
-                  <ion-input formControlName="confirmPass" clearInput="true" type="password" color="dark"></ion-input>
-                </ion-item>
-
-                <span style="position: 'absolute';" @passMatch
-                  *ngIf="digitalForm.hasError('notSame') && digitalForm.get('confirmPass').dirty" class="small">Your
-                  passwords do not
-                  match.</span>
-              </ion-col>
-            </ion-row>
-          </div>
-
-
-
+        <div class="">
           <ion-row>
-            <ion-col size="10" class="mx-auto mt-5">
-              <ion-button [disabled]=digitalForm.invalid (click)="submit()" expand="block" color="ashesi"
-                fill="solid" class="shadow-sm">
-                Complete Sign Up
-              </ion-button>
+            <ion-col size="10" class="mx-auto pt-3">
+              <ion-item class="ion-no-padding">
+                <ion-label position="floating">
+                  <p class='ion-label'>Your Password</p>
+                </ion-label>
+                <ion-input formControlName="password" clearInput="true" type="password" color="dark"></ion-input>
+              </ion-item>
             </ion-col>
           </ion-row>
 
-        </form>
-      </div>
-    </div>
+          <ion-row class="mt-1">
+            <ion-col size="10" class="mx-auto pt-3">
+              <ion-item class="ion-no-padding">
+                <ion-label position="floating">
+                  <p class='ion-label'>Confirm Your Password</p>
+                </ion-label>
+                <ion-input formControlName="confirmPass" clearInput="true" type="password" color="dark"></ion-input>
+              </ion-item>
 
+              <span style="position: 'absolute';" @passMatch
+                *ngIf="digitalForm.hasError('notSame') && digitalForm.get('confirmPass').dirty" class="small">Your
+                passwords do not
+                match.</span>
+            </ion-col>
+          </ion-row>
+        </div>
+
+
+
+        <ion-row>
+          <ion-col size="10" class="mx-auto mt-5">
+            <ion-button [disabled]=digitalForm.invalid (click)="submit()" expand="block" color="ashesi" fill="solid"
+              class="shadow-sm">
+              Complete Sign Up
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+      </form>
+   
 
   </ion-grid>
 </ion-content>
