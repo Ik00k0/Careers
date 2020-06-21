@@ -23,10 +23,10 @@ import { environment } from 'src/environments/environment';
       'fade', [
       transition(':enter', [
         style({ opacity: 0, color: 'red' }),
-        animate('500ms', style({ opacity: 1, color:'white'}))
+        animate('500ms', style({ opacity: 1, color: 'white' }))
       ]),
       transition(':leave', [
-        style({ opacity: 1}),
+        style({ opacity: 1 }),
         animate('500ms', style({ opacity: 0 }))
       ])
     ])
@@ -37,9 +37,9 @@ export class LoginPage implements OnInit {
 
   private disabled: Boolean = true;
   private noLogin: Boolean = true;
-  
+
   private emailRegex = environment.emailRegex;
-  private loginUrl = 'http://157.245.117.18/career/login/loginproc.php';
+  // private loginUrl = 'http://157.245.117.18/career/login/loginproc.php';
   private loginFrame: loginModel;
   private loadingDone: boolean = false;
   private loginForm: FormGroup;
@@ -49,8 +49,8 @@ export class LoginPage implements OnInit {
     private formBuilder: FormBuilder,
     private httpClient: HTTP,
     private toaster: ToastController,
-    private storage: Storage
-    
+    private storage: Storage,
+
   ) {
 
 
@@ -72,18 +72,18 @@ export class LoginPage implements OnInit {
   }
 
 
-  
+
 
   submitLoginDetails(uEmail: string, uPassword: string) {
     // console.log(uemail + ' ' + upassword )
     this.noLogin = false;
     let uRemState = this.loginForm.get('urem').value;
     console.log("Urem is " + uRemState);
-    let uRem ='';
+    let uRem = '';
 
-    if(uRemState ==  false){
+    if (uRemState == false) {
       uRem = 'forget'
-    }else{
+    } else {
       uRem = 'checked'
     }
 
@@ -94,7 +94,7 @@ export class LoginPage implements OnInit {
     }
 
     console.log(body)
-    this.httpClient.post(this.loginUrl, body, { 'Content-Type': 'application/json' }).then(
+    this.httpClient.post(environment.loginUrl, body, { 'Content-Type': 'application/json' }).then(
       (data) => {
 
         if (data.data == "success") {
@@ -164,12 +164,12 @@ export class LoginPage implements OnInit {
     toast.present();
   }
 
-  check(i:string) {
+  check(i: string) {
     console.log(i);
   }
 
 
-  forgot(){
+  forgot() {
     this.router.navigateByUrl('login/forgot')
   }
 

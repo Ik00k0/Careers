@@ -33,6 +33,7 @@
     "animate.css": "^4.1.0",
     "bootstrap": "^4.5.0",
     "cordova-android": "8.1.0",
+    "cordova-ios": "^5.1.1",
     "cordova-plugin-advanced-http": "^2.4.1",
     "cordova-plugin-app-launcher": "^0.4.0",
     "cordova-plugin-appavailability": "^0.4.2",
@@ -106,7 +107,8 @@
       "cordova-plugin-app-launcher": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'info',
+    redirectTo: 'home',
     pathMatch: 'full',
     
   },
@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
     
   },
   {

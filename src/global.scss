@@ -24,11 +24,16 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
-@import '~animate.css/animate.min';
+@import "~animate.css/animate.min";
 
 * {
   font-family: Lato;
 }
+
+// Remove header shadow
+// ion-header.md.header-md.header-collapse-none.hydrated::after {
+//   display: none !important;
+// }
 
 .ripple-parent {
   position: relative;
@@ -43,8 +48,17 @@
   --ion-color-shade: var(--ion-color-ashesi-shade);
   --ion-color-tint: var(--ion-color-ashesi-tint);
 }
+.ion-color-ashesi-dark {
+  --ion-color-base: var(--ion-color-ashesi-dark);
+  --ion-color-base-rgb: var(--ion-color-ashesi-dark-rgb);
+  --ion-color-contrast: var(--ion-color-ashesi-dark-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-ashesi-dark-contrast-rgb);
+  --ion-color-shade: var(--ion-color-ashesi-dark-shade);
+  --ion-color-tint: var(--ion-color-ashesi-dark-tint);
+}
+
 .input-clear-icon.sc-ion-input-md,
-.input-clear-icon.sc-ion-input-ios  {
+.input-clear-icon.sc-ion-input-ios {
   background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><polygon fill='white' points='405,136.798 375.202,107 256,226.202 136.798,107 107,136.798 226.202,256 107,375.202 136.798,405 256,285.798 375.202,405 405,375.202 285.798,256'/></svg>") !important;
   width: 30px;
   height: 30px;

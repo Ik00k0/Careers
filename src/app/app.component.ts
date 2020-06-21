@@ -21,6 +21,36 @@ import { environment } from 'src/environments/environment';
 export class AppComponent {
   private rootPage: any;
   private urls = ["/careers", "/careers/courses/", '/home', '/home/active', '/courses'];
+
+  private appPages = [
+    {
+      title: 'Home',
+      url: '/home',
+      icon: 'home'
+    },
+    {
+      title: 'Careers',
+      url: '/careers',
+      icon: 'business'
+    },
+    {
+      title: 'Courses',
+      url: '/courses',
+      icon: 'school'
+    },
+    {
+      title: 'Settings',
+      url: '/settings',
+      icon: 'settings'
+    },
+    {
+      title: 'Help',
+      url: '/help',
+      icon: 'information-circle'
+    }
+  ];
+
+
   private urlMatch = false;
   industries: any = null;
   private username;
@@ -81,7 +111,12 @@ export class AppComponent {
       this.splashScreen.hide();
 
       if (this.platform.is("cordova")) {
-        this.storage.get('username').then((user) => { this.username = user.split('@')[0] })
+        this.storage.get('username').then((user) => {
+          if (user != null) {
+            this.username = user.split('@')[0]
+          }
+
+        })
       }
     });
   }
@@ -102,27 +137,30 @@ export class AppComponent {
     this.menu.open('custom');
   }
 
-  async  openMenu() {
+  async openMenu() {
     await this.menu.open();
   }
 
-  async  closeMenu() {
+  async closeMenu() {
     await this.menu.close();
   }
 
 
-  async comingSoon() {
+  async comingSoon(i: number) {
+    console.log(i);
+    if ((i == 3) || (i == 4)) {
 
 
-    const alert = await this.alert.create({
-      // cssClass: 'my-custom-class',
-      header: 'Coming Soon',
-      // subHeader: 'Subtitle',
-      message: 'This aspect of the app will be coming soon.',
-      buttons: ['Ok, I\'ll be waiting']
-    });
+      const alert = await this.alert.create({
+        // cssClass: 'my-custom-class',
+        header: 'Coming Soon',
+        // subHeader: 'Subtitle',
+        message: 'This aspect of the app will be coming soon.',
+        buttons: ['Ok, I\'ll be waiting']
+      });
 
-    await alert.present();
+      await alert.present();
+    }
   }
 
   // checkURL() {
@@ -153,6 +191,11 @@ export class AppComponent {
     this.menu.close();
     this.router.navigateByUrl('login');
   }
+
+  route(url: string) {
+    this.router.navigateByUrl(url);
+  }
+
 
 
 }

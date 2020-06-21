@@ -26,7 +26,12 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.storage.get('username').then(
-      (user)=>{this.username = user.split('@')[0]}
+      (user)=>{
+        if(user != null){
+          this.username = user.split('@')[0];
+        }
+        
+      }
     )
   }
 

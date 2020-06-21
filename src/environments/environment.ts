@@ -5,11 +5,12 @@
 export const environment = {
   production: false,
   emailRegex: '[a-zA-Z]{1,20}[\.\-\_]{0,1}[a-zA-Z]{0,20}[\.\-\_]{0,1}[a-zA-Z]{0,20}@ashesi.edu.gh',
-  forgotPassURL: 'http://157.245.117.18/career/login/forgotpassproc.php',
+  forgotPassURL: 'https://apps.ashesi.edu.gh/career/login/forgotpassproc.php',
   jsonHeader:  { 'Content-Type': 'application/json' },
-  getAllIndustries: 'http://157.245.117.18/career/mobile/get_all_industry.php',
-  getSpecificCareer: 'http://157.245.117.18/career/mobile/get_careers_on_ind.php',
-  getSpecificCourseUrl: 'http://157.245.117.18/career/mobile/get_courses_for_career.php'
+  getAllIndustries: 'https://apps.ashesi.edu.gh/career/mobile/get_all_industry.php',
+  getSpecificCareer: 'https://apps.ashesi.edu.gh/career/mobile/get_careers_on_ind.php',
+  getSpecificCourseUrl: 'https://apps.ashesi.edu.gh/career/mobile/get_courses_for_career.php',
+  loginUrl: 'https://apps.ashesi.edu.gh/career/login/loginproc.php',
 };
 
 /*
