@@ -3,7 +3,6 @@
   <div class="slideContainer">
     <ion-grid fixed>
       <ion-row>
-
         <ion-col class="mx-auto" size="10">
 
           <div class="d-flex flex-row justify-content-center">
@@ -35,7 +34,7 @@
             <div class="">
               <ion-item>
                 <ion-label id="custLabel" color="white" position="floating"> Your Email</ion-label>
-                <ion-input formControlName="uemail" clearInput="true" inputmode="email" color="white"></ion-input>
+                <ion-input formControlName="uemail" autocomplete="email" inputmode="email" color="light"></ion-input>
 
               </ion-item>
               <span @fade class="patternError text-light small" style="position: absolute;"
@@ -48,12 +47,12 @@
         </ion-row>
 
         <ion-row>
-          <ion-col class="mx-auto mt-2" size="10">
+          <ion-col class="mx-auto mt-3" size="10">
 
             <div class="">
               <ion-item>
                 <ion-label id="custLabel" color="white" position="floating"> Your Password</ion-label>
-                <ion-input formControlName="upassword" clearInput="true" type="password" color="white"></ion-input>
+                <ion-input formControlName="upassword" type="password" color="white"></ion-input>
               </ion-item>
             </div>
 
@@ -63,9 +62,14 @@
         <ion-row class="mt-4">
           <ion-col size="10" class="mx-auto text-center">
             <div class="form-check">
-              <input (click)="check(loginForm.controls.urem.value)" formControlName="urem" type="checkbox" class="form-check-input"
-                id="exampleCheck1">
-              <label (click)="check(loginForm.controls.urem.value)" class="form-check-label text-light font-weight-light" for="exampleCheck1">Remember Me?</label>
+              <!-- <input (click)="check(loginForm.controls.urem.value)" formControlName="urem" type="checkbox" class="form-check-input"
+                id="exampleCheck1"> -->
+
+              <ion-checkbox color="light" (click)="check(loginForm.controls.urem.value)" formControlName="urem"
+                class="mr-2 align-middle"></ion-checkbox>
+              <ion-label class="form-check-label text-light font-weight-light align-middle" for="exampleCheck1">Remember
+                Me?</ion-label>
+
             </div>
           </ion-col>
         </ion-row>
@@ -91,7 +95,7 @@
 
       <ion-row class="mt-4">
         <ion-col class="mx-auto text-center" size="8">
-          <p  (click)="forgot()" class=" text-white text-underline lead small mb-0"> Forgot Your Password?</p>
+          <p (click)="forgot()" class=" text-white text-underline lead small mb-0"> Forgot Your Password?</p>
           <hr class="mt-1">
         </ion-col>
       </ion-row>
