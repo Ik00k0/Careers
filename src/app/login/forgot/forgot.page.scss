@@ -1,30 +1,54 @@
-@import '../login.page.scss';
-
-ion-content{
-    --background: #923d41;
+.back-button{
+    position: absolute;
+    left: 1.5em;
 }
 
-
-.centerGrid{
-        position: absolute;
-        width: 100%;
-        top: 40%;
-        left: 0px;
-        right: 0px;
-        transform: translateY(-40%);
+@media (min-width: 600px) {
+    ion-card {
+        max-width: 75%;
+        margin: 0 auto;
+    }
 }
 
-.ashesi{
+@media (orientation: portrait) {
+    ion-card {
+        transform: translateY(15%);
+    }
+}
+
+.ashesi {
     color: var(--ion-color-ashesi);
 }
 
-
-ion-item{
+ion-item {
     --highlight-height: 1px;
     --highlight-color-focused: black !important;
     --highlight-color: black !important;
 }
 
-div.item-native{
+div.item-native {
     padding: 0px !important;
+}
+
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+    border-color: red;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+}
+
+.input-clear-icon.sc-ion-input-md,
+.input-clear-icon.sc-ion-input-ios {
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><polygon fill='red' points='405,136.798 375.202,107 256,226.202 136.798,107 107,136.798 226.202,256 107,375.202 136.798,405 256,285.798 375.202,405 405,375.202 285.798,256'/></svg>") !important;
 }
